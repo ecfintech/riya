@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grow with Abrar</title>
+<title>Grow with Riya</title>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -76,6 +76,11 @@ src="https://www.facebook.com/tr?id=1381291943768734&ev=PageView&noscript=1"
     line-height:1.25;
     margin-bottom:14px;
   }
+  .free-tag{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:12px;
+  }
   .skill-line{
     font-size:16px;
     font-weight:600;
@@ -111,67 +116,39 @@ src="https://www.facebook.com/tr?id=1381291943768734&ev=PageView&noscript=1"
   }
   .btn:hover{background:transparent; color:var(--brass-light);}
   .btn svg{width:20px; height:20px;}
-  
-  .countdown-timer{
-    margin-top:14px;
-    font-size:13px;
-    color:var(--paper-dim);
-    letter-spacing:0.01em;
-  }
-  .countdown-timer span{
-    color:var(--brass-light);
-    font-weight:600;
-  }
 </style>
 </head>
 <body>
 
 <div class="card">
   <div class="avatar" aria-hidden="true">
-    <img src="IMG_001157843.jpg" alt="Avatar">
+    <img src="IMG-20260914-WA0023.jpg" alt="Abrar">
   </div>
 
-  <h1>The most premium asset in 2026?</h1>
-  <p class="skill-line">🔥 A Refined Skill Set ✅</p>
+  <h1>Hey I'm Riya</h1>
+  <div class="free-tag">It's Totally Free</div>
+  <p class="skill-line">10 Tasks = 5500 Cash</p>
 
   <p class="wanna">WANNA LEARN?</p>
   <p class="below">Then click on the below link 👇</p>
 
-  <a href="https://t.me/ltsRiya?text=IM%20INTRESTED" class="btn">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-    Telegram Now
+  <a href="https://t.me/ltsabrar?text=IM%20INTRESTED" class="btn" id="cta-primary">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21.5 3.5 2.7 10.9c-1.1.44-1.1 1.06-.2 1.34l4.8 1.5 1.85 5.66c.22.6.38.84.8.84.4 0 .58-.18.8-.4l2.1-2.03 4.63 3.42c.85.47 1.46.23 1.68-.79l3.03-14.29c.32-1.27-.47-1.83-1.29-1.45zM8.9 13.3l9.4-5.86c.47-.28.9-.13.55.18l-8 7.23-.32 3.4-1.63-4.95z"/>
+    </svg>
+    Chat on Telegram
   </a>
-  <p class="countdown-timer">Redirecting in <span id="timerSec">10</span>s...</p>
 </div>
 
 <script>
-var targetUrl = "https://t.me/ltsRiya?text=IM%20INTRESTED";
-var secondsLeft = 10;
-var timerElement = document.getElementById("timerSec");
-
-function goToTelegram(e){
-  if(e && e.preventDefault){
-    e.preventDefault();
-  }
-  if(!sessionStorage.getItem("leadFired_riya")){
-    if(typeof fbq === "function"){
-      fbq("track", "Lead");
+  var leadFired = false;
+  function fireLeadOnce(){
+    if(!leadFired){
+      leadFired = true;
+      fbq('track', 'Lead');
     }
-    sessionStorage.setItem("leadFired_riya", "true");
   }
-
-  window.location.href = targetUrl;
-}
-var countdownInterval = setInterval(function(){
-  secondsLeft--;
-  if(timerElement){
-    timerElement.textContent = secondsLeft;
-  }
-  if(secondsLeft <= 0){
-    clearInterval(countdownInterval);
-    goToTelegram();
-  }
-}, 1000);
+  document.getElementById('cta-primary').addEventListener('click', fireLeadOnce);
 </script>
 
 </body>
